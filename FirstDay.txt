@@ -1,0 +1,292 @@
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 2.4.4
+      /_/
+
+Using Scala version 2.11.12 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_171)
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala> var a=100
+a: Int = 100
+
+scala> //dynamically type inferred
+
+scala> var b="ramakrishna"
+b: String = ramakrishna
+
+scala> a="nhat"
+<console>:25: error: type mismatch;
+ found   : String("nhat")
+ required: Int
+       a="nhat"
+         ^
+
+scala> //statically type language
+
+scala> a=200
+a: Int = 200
+
+scala> //mutable variable which change their value
+
+scala> val pi=3.14
+pi: Double = 3.14
+
+scala> //val is immutable data type,, more like constant type
+
+scala> pi=3.43
+<console>:25: error: reassignment to val
+       pi=3.43
+         ^
+
+scala> //so it is immutable data type
+
+scala> /* block expression */
+     | */
+<console>:25: error: not found: value */
+       */
+       ^
+
+scala> var x={
+     | var p=100
+     | var q=72
+     | p-q
+     | }
+x: Int = 28
+
+scala> x
+res2: Int = 28
+
+scala> //this is block expression last line is your return value
+
+scala> var x=60
+x: Int = 60
+
+scala> if(x > 50)
+     | {
+     | println("X is greater than 50")
+     | }else{
+     | println("X is less then 50")
+     | }
+X is greater than 50
+
+scala> if(x >90)
+     | {
+     | println("A +")
+     | }else{
+     | if(x >75 && x < 90)
+     | {
+     | println("A")
+     | }
+     | else{
+     | println("C")
+     | }
+     | }
+C
+
+scala> //nested if - else statment
+
+scala> if(x > 90 || x < 65)
+     | {
+     | println("pass")
+     | }
+pass
+
+scala> //Lazy variable
+
+scala> val x=scala.io.Source.fromFile("sample.txt").mkString
+x: String =
+"hellow all how are you, enjoy your life
+hope all is good
+how is your father
+how is your mother
+how is your brother
+how is your sister
+how is your grandfater
+how is your uncle
+how is your son
+how is your daughter
+how is your wife
+how is your niece
+how is your nephew
+how is your gradma
+how s your friend
+
+hellow all how are you, enjoy your life
+hope all is good
+how is your father
+how is your mother
+how is your brother
+how is your sister
+how is your grandfater
+how is your uncle
+how is your son
+how is your daughter
+how is your wife
+how is your niece
+how is your nephew
+how is your gradma
+how s your friend
+
+hellow all how are you, enjoy your life
+hope all is good
+how is your father
+how is your mother
+how is your brother
+how is your sister
+how...
+scala> lazy val x=scala.io.Source.fromFile("ok.txt").mkString
+x: String = <lazy>
+
+scala> lazy val x=scala.io.Source.fromFile("sample.txt").mkString
+x: String = <lazy>
+
+scala> x
+res6: String =
+"hellow all how are you, enjoy your life
+hope all is good
+how is your father
+how is your mother
+how is your brother
+how is your sister
+how is your grandfater
+how is your uncle
+how is your son
+how is your daughter
+how is your wife
+how is your niece
+how is your nephew
+how is your gradma
+how s your friend
+
+hellow all how are you, enjoy your life
+hope all is good
+how is your father
+how is your mother
+how is your brother
+how is your sister
+how is your grandfater
+how is your uncle
+how is your son
+how is your daughter
+how is your wife
+how is your niece
+how is your nephew
+how is your gradma
+how s your friend
+
+hellow all how are you, enjoy your life
+hope all is good
+how is your father
+how is your mother
+how is your brother
+how is your sister
+...
+scala> { var ok=3
+     | }
+
+scala> ok
+<console>:24: error: not found: value ok
+       ok
+       ^
+
+scala> { var ok=34
+     | println(ok)
+     | }
+34
+
+scala> var x=20
+x: Int = 20
+
+scala> var y={
+     | if( x ==20)
+     | {
+     | 20}
+     | else{
+     | "error"
+     | }
+     | }
+y: Any = 20
+
+scala> y
+res10: Any = 20
+
+scala> y="rudresh
+<console>:1: error: unclosed string literal
+y="rudresh
+  ^
+
+scala> y="rudresh"
+y: Any = rudresh
+
+scala> var a: Any = 124
+a: Any = 124
+
+scala> a = "rudresh"
+a: Any = rudresh
+
+scala> a='ru'
+<console>:1: error: unclosed character literal
+a='ru'
+     ^
+
+scala> a="r"
+a: Any = r
+
+scala> var a="r"
+a: String = r
+
+scala> a="s"
+a: String = s
+
+scala> val a="r"
+a: String = r
+
+scala> a="s"
+<console>:25: error: reassignment to val
+       a="s"
+        ^
+
+scala> 1 to 5
+res11: scala.collection.immutable.Range.Inclusive = Range(1, 2, 3, 4, 5)
+
+scala> for( x <- 1 to 5)
+     | {
+     | println("value of x "+ x)
+     | }
+value of x 1
+value of x 2
+value of x 3
+value of x 4
+value of x 5
+
+scala>
+scala> //function gives you return value
+
+scala> //procedure no return any value
+
+scala> // method class value
+
+scala> def calArea(length:Int, width:Int): Int
+     | =
+     | {
+     | var area=0
+     | area=length * width
+     | area
+     | }
+calArea: (length: Int, width: Int)Int
+
+scala> calArea(10,7)
+res2: Int = 70
+
+scala> //this is calling function
+
+scala> def calc(len:Int,wid:Int)= len * wid
+calc: (len: Int, wid: Int)Int
+
+scala> calc(234,3)
+res3: Int = 702
+
+scala>
